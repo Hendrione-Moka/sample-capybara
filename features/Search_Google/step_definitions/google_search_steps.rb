@@ -1,6 +1,7 @@
 Given(/^I Open Google Home Page$/) do
   puts "Given"
   visit('/')
+  sleep 10
   # @driver = Selenium::WebDriver.for :chrome
   # @driver.navigate.to "http://google.com"
 end
