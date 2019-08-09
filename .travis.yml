@@ -14,13 +14,13 @@ before_install:
 install: gem install rails
 
 before_script:
-  - 'export PATH=$PATH:/usr/local/bin/sc'
-  - 'source ~/.bashrc'
-  - 'echo $PATH'
+# - 'export PATH=$PATH:/usr/local/bin/sc'
+#  - 'source ~/.bashrc'
+#  - 'echo $PATH'
   - 'bundle update'
   - 'bundle install'
 script:
- - bundle exec rake knapsack:cucumber
+# - bundle exec rake knapsack:cucumber
 
 jobs:
  allow_failures:
