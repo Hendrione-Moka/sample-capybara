@@ -14,27 +14,11 @@ before_install:
 install: gem install rails
 
 before_script:
-#  - 'sudo cp Root-R1.crt /usr/local/share/ca-certificates/Root-R1.crt'
-#  - 'sudo update-ca-certificates'
-#  - 'curl -k https://dev.mokapos.com'
-  - './count_feature.sh'
-  - 'sh time_param.sh'
-  - 'export TZ=Asia/Jakarta'
-  - 'date'
-  # download and extract
-  - 'mkdir joss'
-  - 'cd joss'
-  - 'wget https://saucelabs.com/downloads/sc-4.4.12-linux.tar.gz'
-  - 'tar xf sc-4.4.12-linux.tar.gz'
-  - 'ls'
-  - 'cd ..'
-  - 'sudo mv joss/sc-4.4.12-linux/bin/sc /usr/local/bin/sc'
   - 'export PATH=$PATH:/usr/local/bin/sc'
   - 'source ~/.bashrc'
   - 'echo $PATH'
   - 'bundle update'
   - 'bundle install'
-  - 'rake db:migrate'
 script:
  - bundle exec rake knapsack:cucumber
 
@@ -48,13 +32,9 @@ jobs:
 
 env:
  global:
-   - CI_NODE_TOTAL=5
+   - CI_NODE_TOTAL=1
  matrix:
    - CI_NODE_INDEX=0
-   - CI_NODE_INDEX=1
-   - CI_NODE_INDEX=2
-   - CI_NODE_INDEX=3
-   - CI_NODE_INDEX=4
 
 branches:
   only:
