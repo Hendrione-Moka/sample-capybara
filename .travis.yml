@@ -13,10 +13,9 @@ addons:
 
 before_install:
     - gem update --system
-    - 'sudo gem install cucumber'
     - gem install bundler
 
-#install: gem install rails
+install: gem install rails
 
 before_script:
 # - 'export PATH=$PATH:/usr/local/bin/sc'
