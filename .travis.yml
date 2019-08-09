@@ -8,10 +8,13 @@ group: deprecated-2017Q4
 rvm:
   - 2.4.0
 
+addons:
+  chrome: stable
+
 before_install:
   - gem update --system
   - gem --version
-install: gem install rails
+#install: gem install rails
 
 before_script:
 # - 'export PATH=$PATH:/usr/local/bin/sc'
@@ -19,7 +22,7 @@ before_script:
 #  - 'echo $PATH'
   - 'bundle update'
   - 'bundle install'
-script:
+#script:
 # - bundle exec rake knapsack:cucumber
 
 jobs:
