@@ -22,6 +22,7 @@ before_script:
 #  - 'source ~/.bashrc'
 #  - 'echo $PATH'
 #  - 'bundle update'
+  - 'sudo gem install cucumber'
   - 'bundle install'
 #script:
 # - bundle exec rake knapsack:cucumber
