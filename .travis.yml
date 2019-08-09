@@ -32,7 +32,7 @@ jobs:
  include:
    - stage: push notif
      script:
-     - cucumber features/
+     - rake features
 
 env:
  global:
