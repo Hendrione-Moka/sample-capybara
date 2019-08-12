@@ -3,22 +3,29 @@ cache: bundler
 
 sudo: required
 dist: trusty
+group: deprecated-2017Q4
 
 rvm:
   - 2.4.0
+
+addons:
+  chrome: stable
 
 before_install:
     - gem update --system
     - gem install bundler
     - gem install cucumber
 
-install:
-  - gem install rails
-  - bundle install
+install: gem install rails
+
+before_script:
+  - 'bundle install'
 
 jobs:
+ allow_failures:
+   - rvm: 2.4.0
  include:
-   - stage: Test
+   - stage: push notif
      script:
      - rake features
 
